@@ -1,0 +1,130 @@
+html, body, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+nav {
+    display: block;
+    background-color: #ccc;
+    width: 100%;
+}
+nav ul {
+    text-align: center;
+}
+nav ul li {
+    list-style: none;
+    font-weight: bolder;
+    /*float: left;*/
+    display: inline-block;
+}
+nav ul li a {
+    color: #555;
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+nav ul li:hover a {
+    color: #000;
+}
+.cl:after {
+    clear: both;
+    display: block;
+    content: '';
+    height: 0;
+}
+h1 {
+    text-align: center;
+}
+.file-div {
+    background-color: chocolate;
+    color: #fff;
+    margin: 0 auto;
+    width: 400px;
+    padding: 25px;
+    font-size: 18px;
+}
+
+#admin-login {
+    display: block;
+    width: 200px;
+    margin: 10% auto;
+    padding: 10px;    border-radius: 5px;
+    background-color: #25f;
+    text-align: center;
+
+}
+#register {
+    display: block;
+    width: 400px;
+    margin: 15% auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #25f;
+    text-align: center;
+}
+#register div {
+    display: inline-block;
+    width: 49%;
+}
+/*#admin-login input,*/
+/*#admin-register input {*/
+    /*display: block;*/
+    /*width: 180px;*/
+    /*height: 30px;*/
+    /*padding: 10px;*/
+    /*box-sizing: border-box;*/
+    /*margin: 10px;*/
+/*}*/
+/*#admin-login label,*/
+/*#admin-register label {*/
+    /*color: #fff;*/
+    /*font-size: 18px;*/
+/*}*/
+/*#admin-login button,*/
+/*#admin-register button {*/
+    /*border-radius: 3px;*/
+    /*padding: 5px 15px;*/
+    /*font-weight: bold;*/
+    /*border: none;*/
+    /*cursor: pointer;*/
+    /*margin: 5px 0;*/
+/*}*/
+.login-error {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    color: #f00;
+}
+.register-error {
+    margin: -3% auto;
+    text-align: center;
+    color: #f00;
+}
+.register-error p {
+    padding: 5px;
+    margin: 0;
+    font-weight: bold;
+}
+#register p {
+    color: #f55;
+    font-weight: bold;
+}
+#cboxOverlay {
+    background-color: #000;
+    position:fixed;
+    top: 0; left: 0;
+    width:100%;
+    height:100%;
+    opacity: 0.85;
+}
+#colorbox {
+    background-color: #fff;
+}
+#cboxClose {
+    position: absolute;
+    top: -24px;
+    right: 0;
+}
+#register div {
+    display: inline-block;
+}

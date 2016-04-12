@@ -1,0 +1,1 @@
+<h1><?php echo \Cms\App::getInstance()->getsv('site_options'); ?></h1>
