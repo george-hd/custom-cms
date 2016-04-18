@@ -149,7 +149,17 @@ class SectionRepository
      */
     public function getSectionByKeyAndLanguage($key) {
         $sql = "SELECT * FROM sections WHERE `key` = ? AND `language_key` = ? AND visibility = '1'";
-        return $this->db->prepare($sql)->execute([$key, \Cms\App::getInstance()->getAppLanguage()['key']])->fetchAllAssoc();
+        $result = $this->db->prepare($sql)->execute([$key, \Cms\App::getInstance()->getAppLanguage()['key']])->fetchRowObj();
+        return new \Cms\Models\SectionModel(
+            $result->id,
+            $result->key,
+            $result->title,
+            $result->body,
+            $result->short_desc,
+            $result->language_key,
+            $result->category_key,
+            $result->visibility
+        );
     }
 
     /**

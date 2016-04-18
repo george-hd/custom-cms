@@ -51,18 +51,6 @@ class ExternalSectionFieldRepository
             LEFT JOIN sections s
             ON (f.section_id = s.id)
             WHERE section_id = ?";
-//        $sql = "SELECT DISTINCT
-//            f.id as f_id,
-//            f.label as f_label,
-//            f.type as f_type,
-//            r.key as r_key,
-//            r.value as r_value
-//            FROM external_fields f
-//            LEFT JOIN resources r
-//            ON(f.section_id = r.section_id)
-//            WHERE f.section_id = ?
-//            AND r.key = f.label + '-' + f.id
-//            GROUP BY f.label";
         return $this->db->prepare($sql)->execute([$section->getId()])->fetchAllObj();
     }
 

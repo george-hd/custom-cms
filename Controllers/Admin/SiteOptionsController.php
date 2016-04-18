@@ -531,6 +531,8 @@ class SiteOptionsController extends BaseController
                 $this->createSectionField();
             } else if($this->input->getPostById('action') === 'delete-ext-field') {
                 $this->deleteExtField();
+            } else if($this->input->getPostById('action') === 'delete-resource') {
+                $this->deleteResource();
             }
         } else {
             throw new \Exception('Bad request', 404);
@@ -815,12 +817,31 @@ class SiteOptionsController extends BaseController
             );
             $s->addExternalField($field);
         }
+        $this->getAllSections();
     }
 
     private function deleteExtField() {
         $field = \Cms\Repositories\ExternalSectionFieldRepository::getInstance()->getExtFieldById($this->input->getPostById('extFieldId'));
         $result = \Cms\Repositories\ExternalSectionFieldRepository::getInstance()->deleteExtField($field['label']);
         echo ($result > 0 ? '<p class="success">Field was deleted successfully</p>' : '<p class="error">Error deleting field</p>');
+    }
+
+    private function deleteResource() {
+        $res = new \Cms\Models\ResourceModel(
+            null,
+            $this->input->getPostById('resId'),
+            'value',
+            '1'
+            );
+        $resource = $res->getResourceByKey();
+        $resource = new \Cms\Models\ResourceModel(
+            $resource[0]->id,
+            $resource[0]->key,
+            $resource[0]->value,
+            $resource[0]->section_id
+        );
+        $result = $resource->deleteResource();
+        if($result > 0) echo 'deleted';
     }
 
 }

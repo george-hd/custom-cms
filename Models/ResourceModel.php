@@ -142,8 +142,18 @@ class ResourceModel extends BaseModel
         return \Cms\Repositories\ResourceRepository::getInstance()->addResource($this);
     }
 
+    /**
+     * @return mixed
+     */
     public function updateResource() {
         return \Cms\Repositories\ResourceRepository::getInstance()->updateResource($this);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function deleteResource() {
+        return \Cms\Repositories\ResourceRepository::getInstance()->deleteResource($this);
     }
 
 }

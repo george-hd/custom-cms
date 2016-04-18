@@ -596,6 +596,19 @@ $(function(){
                             //    //}, 800);
                             //});
                         });
+
+                        $('.cms-delete-resource').on('click', function() {
+                            $.ajax({
+                                url: '/Cms/public/admin/site-options/sections',
+                                method: 'POST',
+                                data: {
+                                    resId: $('.cms-delete-resource').parent().prev().attr('name'),
+                                    action: 'delete-resource'
+                                }
+                            }).done(function(msg) {
+                                if(msg === 'deleted') $('.cms-current-res').val('current file: empty');
+                            });
+                        });
                     });
 
                 }

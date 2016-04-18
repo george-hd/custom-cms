@@ -74,4 +74,19 @@ class ResourceRepository
         }
         return self::$instance;
     }
+
+    /**
+     * @param \Cms\Models\ResourceModel $res
+     * @return mixed
+     */
+    public function deleteResource(\Cms\Models\ResourceModel $res) {
+        //TODO must to check works or not!!!!!!!
+        if($res->getValue()) {
+            $root = $_SERVER['DOCUMENT_ROOT'] . 'Cms\public\\';
+            $uploadDir = realpath($root . 'images');
+            unlink($uploadDir . DIRECTORY_SEPARATOR . $res->getValue());
+        }
+        $sql = "DELETE FROM resources WHERE `key` = ?";
+        return $this->db->prepare($sql)->execute([$res->getKey()])->getAffectedRows();
+    }
 }

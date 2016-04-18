@@ -44,7 +44,10 @@
                 ?>
                 <label for="<?php echo $field->label.'-'.$field->id; ?>"><?php echo $field->label; ?></label>
                 <input type="file" name="<?php echo $field->label.'-'.$field->id; ?>">
-                <input type="text" value="<?php echo($field->res ? 'current file: '.$field->res : ''); ?>" disabled>
+                <div>
+                    <input class="cms-current-res" type="text" value="<?php echo($field->res ? 'current file: '.$field->res : 'current file: empty'); ?>" disabled>
+                    <img class="cms-delete-resource" src="/Cms/public/images/delete.png" width="20" height="20">
+                </div>
                 <input type="hidden" name="<?php echo $field->label.'-'.$field->id; ?>" value="file">
                 <?php
             } else if($field->type === 'input') {

@@ -233,6 +233,22 @@ h2 {
     padding:  5px 0 2px 5px;
     color: #ff0000;
 }
+.create-form input.cms-current-res {
+    display: inline;
+    width: 50%;
+    margin-top: 0;
+}
+.cms-delete-resource {
+    vertical-align: middle;
+    padding: 6px 6px 5px 6px;
+    margin-top: -1px;
+    margin-left: 5px;
+    cursor: pointer;
+    background-color: #aaaaaa;
+}
+.cms-delete-resource:hover {
+    background-color: #888888;
+}
 #sec-title,
 #sec-desc,
 #sec-key,
